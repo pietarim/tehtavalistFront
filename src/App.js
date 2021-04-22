@@ -23,7 +23,6 @@ function App() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   
 
   const muokkaaState = (muokattava) => {
@@ -53,7 +52,7 @@ function App() {
   }
 
   useEffect(() => {
-    const request = axios.get('http://localhost:3001/api/tehtavat')
+    const request = axios.get('http://159.65.20.117/api/tehtavat')
     request.then(response => setTehtava(response.data))
   }, [])
   useEffect(() => {
