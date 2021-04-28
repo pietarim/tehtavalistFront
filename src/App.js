@@ -15,7 +15,6 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 function App() {
   const [value, setValue] = React.useState(2);
   const [kayttaja, setKayttaja] = useState()
-  const [testiKayttaja, setTestiKayttaja] = useState()
 
   const [tehtava, setTehtava] = useState([])
   
@@ -91,7 +90,6 @@ function App() {
       <Switch>
         
         <Route exact path="/" render={() => (<TehtavaSivu muokkaaState={muokkaaState} tehtavaPoistaminenKasittelija={tehtavaPoistaminenKasittelija} tehtavat={tehtava} kayttaja={kayttaja.nimi} />)} />
-        {/* <Route path="/lomake" component={TehtavaLomake} /> */}
         <Route path="/lomake" render={() => (< TehtavaLomake tehtava={tehtava} setTehtava={setTehtava} />)} /> 
       </Switch>
       

@@ -79,11 +79,6 @@ function TehtavaLomake({tehtava, setTehtava}) {
             onChange={handleOtsikkoChange}
             value={otsikko}
           />
-          {/* <TextField
-            xs={6}
-            className={classes.input}
-            label="Tekijä"
-          /> */}
         </Grid>
         <TextField fullWidth
             className={classes.textFiled}

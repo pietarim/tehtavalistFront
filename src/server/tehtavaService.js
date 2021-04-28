@@ -5,9 +5,6 @@ const setToken = newToken => {
     token = `bearer ${newToken}`
 }
 
-const url = process.env.URL /* 'http://localhost:3001/api/tehtavat' */
-
-
 const muokkaa = async (muokattu) => {
     const id = muokattu._id
     const lahetettava = {

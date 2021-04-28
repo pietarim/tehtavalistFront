@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid, TextField } from '@material-ui/core';
+import { Grid, TextField } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import MuiAlert from '@material-ui/lab/Alert';
 import Alert from '@material-ui/lab/Alert';
 import kirjaudu from '../server/kayttajaService'
 import setToken from '../server/tehtavaService'
@@ -11,9 +10,7 @@ import setToken from '../server/tehtavaService'
 function SisaankirjautumisLomake({setKayttaja}) {
   const [kayttajaTunnus, setTunnus] = useState('')
   const [kayttajaSalasana, setSalasana] = useState('')
-  const [tunnusValid, setTunnusValid] = useState('')
   const timeId = useRef()
-  /* const ilmoitus = useRef('none') */
   const [ilmoitus, setIlmoitus] = useState('none')
 
 
@@ -81,12 +78,8 @@ const classes = useStyles();
             justify="center"
             alignItems="center"
             >
-            {/* <p style={{ color: ilmoitus.current }}>{ilmoitus.current}</p> */}
             <h1>Tehtävälista</h1>
           </Grid>
-          {/* { if (ilmoitus.current) {
-            
-          }} */}
           <Alert style={{display: ilmoitus }} severity="warning">Väärä salasana tai käyttäjätunnus</Alert>
           <Grid
             container
@@ -96,12 +89,10 @@ const classes = useStyles();
           >
             <TextField 
               xs={6}
-              /* onClick={handleTunnusClick} */
               className={classes.input}
               label="Käyttäjätunnus"
               value={kayttajaTunnus}
               error={false}
-              helperText={tunnusValid}
               onChange={kasitteleTunnus}
             />
             <TextField

@@ -95,31 +95,6 @@ const YksiTehtava = ({tehtava, tehtavaPoistaminenKasittelija, kayttaja, muokkaaS
                 <Typography><b>Kuvaus: </b>{tehtava.kommentti}</Typography>
                 <p><b>Omistaja: </b>{tehtava.tekija}</p>
                 {muokkausoikeus()}
-                {/* {!muokkaa ? <Button variant="contained" onClick={() => setMuokkaa(!muokkaa)}>muokkaa</Button> :
-                    <div>
-                        <form onSubmit={Muokkaa}>
-                            <TextField fullWidth
-                                className={classes.textFiled}
-                                id="outlined-multiline-static"
-                                label="Tehtävän kuvaus"
-                                multiline
-                                rows={5}
-                                defaultValue="Kuvaus"
-                                value={muokattuKuvaus}
-                                onChange={kasitteleKuvaus}
-                                variant="outlined"
-                                style={{ margin: '25px 0' }}
-                            />
-                            <Button type="submit" primary={true} variant="contained" style={{ margin: '25px 15px' }}>
-                                Muokkaa
-                            </Button> 
-                        </form>
-                        <Button onClick={() => setMuokkaa(!muokkaa) } variant="contained" style={{ margin: '25px 15px' }}>
-                            Peruuta
-                        </Button>
-                        <Button variant="contained" color="secondary" onClick={() => tehtavaPoistaminenKasittelija(tehtava._id)}>poista</Button>
-                    </div>
-                } */}
                 <hr></hr>
             </div>}
         </div>
