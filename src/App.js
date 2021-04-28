@@ -13,7 +13,6 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 
 function App() {
-  /* const initialKirj = localStorage.getItem('kayttaja') */
   const [value, setValue] = React.useState(2);
   const [kayttaja, setKayttaja] = useState()
   const [testiKayttaja, setTestiKayttaja] = useState()
@@ -38,7 +37,6 @@ function App() {
 
   const tehtavaPoistaminenKasittelija = async id => {
     tehtavaService.poista(id)
-    /* await axios.delete(`http://localhost:3001/api/tehtavat/${id}`) */
     let arr = []
     tehtava.map(n => { if (n._id !== id) {
       arr = arr.concat(n)
@@ -52,7 +50,7 @@ function App() {
   }
 
   useEffect(() => {
-    const request = axios.get('http://159.65.20.117/api/tehtavat')
+    const request = axios.get('https://pietarimurtomaki.com/api/tehtavat')
     request.then(response => setTehtava(response.data))
   }, [])
   useEffect(() => {
@@ -72,30 +70,6 @@ function App() {
 
   return (
     <div>
-      {/* <h1>{kayttaja.tunnus}</h1> */}
-      
-      {/* <Router>
-        <Paper square style={{width: '500px', margin: '0 auto'}}>
-        <Tabs
-          value={value}
-          indicatorColor="primary"
-          textColor="primary"
-          onChange={handleChange}
-          aria-label="disabled tabs example"
-        >
-          <Link to="/tehtavalista"><Tab label="Tehtävät" style={{margin: '0 auto'}} /></Link>
-          <Link to="/lomake"><Tab label="Lisää tehtävä" style={{margin: '0 auto'}} /></Link>
-          <Tab to="/lomake" label="kirjaudu ulos" style={{margin: '0 auto'}} />
-        </Tabs>
-      </Paper>
-      <Switch>
-        
-        <Route path="/tehtavalista" render={() => (<TehtavaSivu tehtavat={tehtava} />)} />
-        <Route path="/lomake" component={TehtavaLomake} />
-        
-      </Switch>
-      
-      </Router> */}
       {kayttaja ? 
         <div>
           <p>{kayttaja.nimi}: Kirjautunut sisään</p>
@@ -126,16 +100,6 @@ function App() {
         :
         <div><SisaankirjautumisLomake setKayttaja={setKayttaja} /></div>
     } 
-      
-
-
-      {/* { !kirjautuminen ? 
-      <SisaankirjautumisLomake kirjautuminen={kirjautuminen} setKirjautuminen={setKirjautuminen} /> :
-      <div>
-        <Button onClick={() => kirUlos()}>Kirjaudu ulos</Button> 
-        <TehtavaSivu tehtavat={tehtava} />
-      </div>
-    } */}
     </div>
   )
 }

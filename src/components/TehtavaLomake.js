@@ -32,6 +32,7 @@ function TehtavaLomake({tehtava, setTehtava}) {
   }));
 
   const lisaa = async event => {
+    console.log('lisaaminen')
     event.preventDefault();
     const lisatty = await tehtavaService.lisaa({
       otsikko: otsikko,
