@@ -32,6 +32,7 @@ function TehtavaLomake({tehtava, setTehtava}) {
   }));
 
   const lisaa = async event => {
+    console.log('lisaaminen')
     event.preventDefault();
     const lisatty = await tehtavaService.lisaa({
       otsikko: otsikko,
@@ -78,11 +79,6 @@ function TehtavaLomake({tehtava, setTehtava}) {
             onChange={handleOtsikkoChange}
             value={otsikko}
           />
-          {/* <TextField
-            xs={6}
-            className={classes.input}
-            label="Tekijä"
-          /> */}
         </Grid>
         <TextField fullWidth
             className={classes.textFiled}

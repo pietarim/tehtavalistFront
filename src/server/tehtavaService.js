@@ -1,11 +1,12 @@
 import axios from 'axios'
+import url from 'config'
+
+
     let token = null
 
 const setToken = newToken => {
     token = `bearer ${newToken}`
 }
-
-const url = process.env.URL /* 'http://localhost:3001/api/tehtavat' */
 
 const muokkaa = async (muokattu) => {
     const id = muokattu._id
@@ -14,14 +15,14 @@ const muokkaa = async (muokattu) => {
         kuvaus: muokattu.kuvaus,
         tekija: muokattu.tekija
     }
-    await axios.put(`http://localhost:3001/api/tehtavat/${id}`, muokattu)
+    await axios.put(`${url}/api/tehtavat/${id}`, muokattu)
 }
 
 const lisaa = async content => {
     const config = {
         headers: { Authorization: token },
     }
-    const response = await axios.post('http://localhost:3001/api/tehtavat', content, config)
+    const response = await axios.post(`${url}/api/tehtavat`, content, config)
     return response.data    
 }
 
@@ -30,7 +31,7 @@ const poista = async (id) => {
     const config = {
         headers: { Authorization: token },
     }
-    const poistettu = await axios.delete(`http://localhost:3001/api/tehtavat/${id}`, config)
+    const poistettu = await axios.delete(`${url}/api/tehtavat/${id}`, config)
     poistettu.then(console.log('poistettu'))
 }
 
