@@ -72,13 +72,15 @@ Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistä
 | /etc/nginx/nginx.conf |
 | --------------------- |
 
-| ... |
-| http { |
-| ... |
-|server_names_hash_bucket_size 64; |
-| ... |
-| } |
-| ... |
+```
+...
+http {
+...
+server_names_hash_bucket_size 64;
+...
+}
+...
+```
 
 ### npm install pm2 -g
 
