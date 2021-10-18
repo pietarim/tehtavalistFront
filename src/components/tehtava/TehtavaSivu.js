@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import YksiTehtava from './YksiTehtava';
 
 
 const TehtavaSivu = ({tehtavat, tehtavaPoistaminenKasittelija, kayttaja, muokkaaState}) => {
-  const [nayta, setNayta] = useState(false)
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -29,23 +28,20 @@ const TehtavaSivu = ({tehtavat, tehtavaPoistaminenKasittelija, kayttaja, muokkaa
     },
   }));
 
-  function nayttaminen() {
-    if (nayta) {
-      setKatkaisijaTeksit('piilota')
-    } else if (!nayta) {
-      setKatkaisijaTeksit('näytä')
-    }
-    setNayta(!nayta);
-  }
-
-
   const classes = useStyles();
 
     return(
       <div className={classes.root}>
         <h1 style={{textAlign: 'center', margin: '60px auto'}}>Tehtävät</h1>
         <hr></hr>
-        {tehtavat.map(n => <YksiTehtava muokkaaState={muokkaaState} kayttaja={kayttaja} tehtavaPoistaminenKasittelija={tehtavaPoistaminenKasittelija} tehtava={n} />)}
+        {tehtavat.map((n, i) => 
+          <YksiTehtava 
+            key={i}
+            muokkaaState={muokkaaState} 
+            kayttaja={kayttaja} 
+            tehtavaPoistaminenKasittelija={tehtavaPoistaminenKasittelija} 
+            tehtava={n} 
+          />)}
       </div>
     )
 }

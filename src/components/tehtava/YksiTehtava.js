@@ -1,18 +1,15 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid, TextField } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import tehtavaService from '../../server/tehtavaService'
 import Typography from '@material-ui/core/Typography';
-import muokkaaState from '../../App'
 
 const YksiTehtava = ({tehtava, tehtavaPoistaminenKasittelija, kayttaja, muokkaaState}) => {
     const [nayta, setNayta] = useState(true)
     const [nappi, setNappi] = useState('näytä')
     const [muokkaa, setMuokkaa] = useState(false)
     const [muokattuKuvaus, setMuokattuKuvaus] = useState()
-
-    let array = []
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -25,33 +22,38 @@ const YksiTehtava = ({tehtava, tehtavaPoistaminenKasittelija, kayttaja, muokkaaS
       function muokkausoikeus() {
           if (tehtava.tekija === kayttaja) {
               return (
+                <div>
+                    {!muokkaa ? 
+                    <Button 
+                      variant="contained" 
+                      onClick={() => setMuokkaa(!muokkaa)}>
+                        muokkaa
+                    </Button> :
                   <div>
-                      {!muokkaa ? <Button variant="contained" onClick={() => setMuokkaa(!muokkaa)}>muokkaa</Button> :
-                    <div>
-                        <form onSubmit={Muokkaa}>
-                            <TextField fullWidth
-                                className={classes.textFiled}
-                                id="outlined-multiline-static"
-                                label="Tehtävän kuvaus"
-                                multiline
-                                rows={5}
-                                defaultValue="Kuvaus"
-                                value={muokattuKuvaus}
-                                onChange={kasitteleKuvaus}
-                                variant="outlined"
-                                style={{ margin: '25px 0' }}
-                            />
-                            <Button type="submit" primary={true} variant="contained" style={{ margin: '25px 15px' }}>
-                                Muokkaa
-                            </Button> 
-                        </form>
-                        <Button onClick={() => setMuokkaa(!muokkaa) } variant="contained" style={{ margin: '25px 15px' }}>
-                            Peruuta
-                        </Button>
-                        <Button variant="contained" color="secondary" onClick={() => tehtavaPoistaminenKasittelija(tehtava._id)}>poista</Button>
-                    </div>
-                    }
+                      <form onSubmit={Muokkaa}>
+                          <TextField fullWidth
+                              className={classes.textFiled}
+                              id="outlined-multiline-static"
+                              label="Tehtävän kuvaus"
+                              multiline
+                              rows={5}
+                              defaultValue="Kuvaus"
+                              value={muokattuKuvaus}
+                              onChange={kasitteleKuvaus}
+                              variant="outlined"
+                              style={{ margin: '25px 0' }}
+                          />
+                          <Button type="submit" primary={true} variant="contained" style={{ margin: '25px 15px' }}>
+                              Muokkaa
+                          </Button> 
+                      </form>
+                      <Button onClick={() => setMuokkaa(!muokkaa) } variant="contained" style={{ margin: '25px 15px' }}>
+                          Peruuta
+                      </Button>
+                      <Button variant="contained" color="secondary" onClick={() => tehtavaPoistaminenKasittelija(tehtava._id)}>poista</Button>
                   </div>
+                  }
+                </div>
               )
           }
       }
@@ -85,13 +87,21 @@ const YksiTehtava = ({tehtava, tehtavaPoistaminenKasittelija, kayttaja, muokkaaS
 
 
     return(
-        <div /* className={classes.root} */>
+        <div>
             {nayta ? <div key={tehtava._id}>
-                <p><b>Otsikko: </b>{tehtava.otsikko} <Button variant="contained" onClick={() => nakymanVaihto()}>{nappi}</Button></p>
+                <p><b>Otsikko: </b>{tehtava.otsikko} 
+                <Button variant="contained" onClick={() => nakymanVaihto()}>
+                  {nappi}
+                </Button></p>
                 <hr></hr>
             </div> : 
             <div key={tehtava._id}>
-                <p><b>Otsikko: </b>{tehtava.otsikko} <Button variant="contained" onClick={() => nakymanVaihto()}>{nappi}</Button></p>
+                <p>
+                  <b>Otsikko: </b>{tehtava.otsikko} 
+                  <Button variant="contained" onClick={() => nakymanVaihto()}>
+                    {nappi}
+                    </Button>
+                  </p>
                 <Typography><b>Kuvaus: </b>{tehtava.kommentti}</Typography>
                 <p><b>Omistaja: </b>{tehtava.tekija}</p>
                 {muokkausoikeus()}

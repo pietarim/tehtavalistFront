@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, TextField } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';

@@ -39,7 +39,7 @@ Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistä
 
 # Localhost:
 
-lisää config.js sijaintiin /src
+luo config.js sijaintiin /src
 
 lisää config.js sisään:
 

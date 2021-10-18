@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid, TextField } from '@material-ui/core';
+import { Grid, TextField } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import tehtavaService from '../server/tehtavaService'
@@ -9,8 +9,6 @@ function TehtavaLomake({tehtava, setTehtava}) {
 
   const [otsikko, setOtsikko] = useState('')
   const [kommentti, setKommentti] = useState('')
-
-  const url = process.env.URL
 
   const useStyles = makeStyles((theme) => ({
     root: {
