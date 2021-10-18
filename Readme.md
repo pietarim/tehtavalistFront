@@ -32,9 +32,16 @@ Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistä
 
 ### `nano /etc/nginx/nginx.conf`
 
-| `Otsikko` |
-| --------- |
-| teksti    |
+| /etc/nginx/nginx.conf |
+| --------------------- |
+
+| ...
+http {
+...
+server_names_hash_bucket_size 64;
+...
+}
+... |
 
 ### npm install pm2 -g
 
