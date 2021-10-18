@@ -35,7 +35,7 @@ Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistä
 | /etc/nginx/nginx.conf |
 | --------------------- |
 
-| ## Ohjeet
+## Ohjeet
 
 # Localhost:
 
@@ -43,7 +43,9 @@ lisää config.js sijaintiin /src
 
 lisää config.js sisään:
 
-`export const url = "https://sinun_domain.com"`
+```
+export const url = "https://sinun_domain.com"
+```
 
 käynnistä sovellus
 
