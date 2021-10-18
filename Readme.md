@@ -31,8 +31,9 @@ Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistä
 ### `ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/`
 
 ### `nano /etc/nginx/nginx.conf`
-
+`
 | `Otsikko` |
+`
 | --------- |
 | teksti    |
 
