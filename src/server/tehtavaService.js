@@ -1,4 +1,7 @@
 import axios from 'axios'
+import url from 'config'
+
+
     let token = null
 
 const setToken = newToken => {
@@ -12,14 +15,14 @@ const muokkaa = async (muokattu) => {
         kuvaus: muokattu.kuvaus,
         tekija: muokattu.tekija
     }
-    await axios.put(`https://pietarimurtomaki.com/api/tehtavat/${id}`, muokattu)
+    await axios.put(`${url}/api/tehtavat/${id}`, muokattu)
 }
 
 const lisaa = async content => {
     const config = {
         headers: { Authorization: token },
     }
-    const response = await axios.post('https://pietarimurtomaki.com/api/tehtavat', content, config)
+    const response = await axios.post(`${url}/api/tehtavat`, content, config)
     return response.data    
 }
 
@@ -28,7 +31,7 @@ const poista = async (id) => {
     const config = {
         headers: { Authorization: token },
     }
-    const poistettu = await axios.delete(`https://pietarimurtomaki.com/api/tehtavat/${id}`, config)
+    const poistettu = await axios.delete(`${url}/api/tehtavat/${id}`, config)
     poistettu.then(console.log('poistettu'))
 }
 

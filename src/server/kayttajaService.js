@@ -1,10 +1,9 @@
 import axios from 'axios'
+import url from 'config'
 
 const kirjaudu = async (body) => {
-
-    const osoite = process.env.onlineUrl
                           
-    const lahetetty = await axios.post(`https://pietarimurtomaki.com/api/kirjautuminen`, body)
+    const lahetetty = await axios.post(`${url}/api/kirjautuminen`, body)
     return lahetetty.data
 
 }
