@@ -16,21 +16,21 @@ Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistä
 
 # Virtuaaliserveri Ubuntu Linux Digitalocean
 
-### sudo apt update
+### `sudo apt update`
 
-### sudo apt install nginx
+### `sudo apt install nginx`
 
-### sudo systemctl start nginx
+### `sudo systemctl start nginx`
 
-### systemctl status nginx
+### `systemctl status nginx`
 
-### sudo ufw allow 'Nginx HTTP'
+### `sudo ufw allow 'Nginx HTTP'`
 
-### sudo mkdir -p /var/www/sinun_domain/html
+### `sudo mkdir -p /var/www/sinun_domain/html`
 
-### ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/
+### `ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/`
 
-### nano /etc/nginx/nginx.conf
+### `nano /etc/nginx/nginx.conf`
 
 | Otsikko |
 | ------- |
