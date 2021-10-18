@@ -43,7 +43,7 @@ lisää config.js sijaintiin /src
 
 lisää config.js sisään:
 
-### export const url = "https://sinun_domain.com"
+`export const url = "https://sinun_domain.com"`
 
 käynnistä sovellus
 
@@ -69,6 +69,8 @@ Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistä
 
 `nano /etc/nginx/nginx.conf`
 
+Muokkaa ngingx config server_names_hash_bucket_size kohta seuraavaksi:
+
 ```
  /etc/nginx/nginx.conf
 
@@ -81,10 +83,10 @@ Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistä
 ...
 ```
 
-### npm install pm2 -g
+`npm install pm2 -g`
 
-### pm2 startup systemd
+`pm2 startup systemd`
 
-### npm install pm2 -g
+`npm install pm2 -g`
 
-### pm2 startup systemd
+`pm2 startup systemd`
