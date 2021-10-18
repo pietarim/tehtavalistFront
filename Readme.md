@@ -69,16 +69,15 @@ Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistä
 
 ### `nano /etc/nginx/nginx.conf`
 
+```
 | /etc/nginx/nginx.conf |
 | --------------------- |
-
-```
 ...
-http {
-...
-server_names_hash_bucket_size 64;
-...
-}
+  http {
+    ...
+      server_names_hash_bucket_size 64;
+    ...
+  }
 ...
 ```
 
