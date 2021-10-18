@@ -70,8 +70,8 @@ Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistä
 ### `nano /etc/nginx/nginx.conf`
 
 ```
-| /etc/nginx/nginx.conf |
-| --------------------- |
+ /etc/nginx/nginx.conf
+
 ...
   http {
     ...
