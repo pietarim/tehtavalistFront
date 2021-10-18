@@ -2,7 +2,7 @@
 
 # Localhost:
 
-lisää config.js sijaintiin /src
+*lisää config.js sijaintiin /src*
 
 lisää config.js sisään:
 
