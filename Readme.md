@@ -4,12 +4,12 @@
 
 Avaa sijainti /tehtavaLista
 
-Lisää env. tiedosto sijaintiin /tehtavaLista/_tänne_:
+Lisää env. tiedosto sijaintiin /tehtavaLista ja täydennä muuttujiin käyttämäsi arvot:
 
 ```
-SALAUS= *esimerkiksiTamaTeksti*
-DBURL = *mongo_db_url*
-PORT = *backendin_kayttama_portti*
+SALAUS= esimerkiksiTamaTeksti
+DBURL = mongo_db_url
+PORT = backendin_kayttama_portti
 ```
 
 Kaynnista backend:
@@ -98,7 +98,7 @@ Siirrä /tehtavaLista ubuntu serverille sijaintiin:
 
 `ubuntu_kayttajanimi/tehtavaLista`
 
-Lisää env. tiedosto /tehtavaLista juureen:
+Lisää env. tiedosto /tehtavaLista juureen ja täydennä muuttujiin käyttämäsi arvot:
 
 ```
 SALAUS= *esimerkiksiTamaTeksti*
