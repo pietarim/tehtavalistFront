@@ -24,8 +24,6 @@ käynnistä sovellus:
 
 `npm start`
 
-Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistät sen linkin mukana tulevien ohjeiden mukaan (https://github.com/pietarim/tehtavaLista)
-
 ## Virtuaaliserveri Ubuntu Linux (esim Digitalocean)
 
 `sudo apt update`
@@ -80,8 +78,10 @@ suorita build
 
 `npm build`
 
-Siirrä /tehtavaLista
+Siirrä /build sisällä olevat tiedostot ubuntu serverille sijaintiin:
 
-ubuntu serverille, esimerkiksi:
+`var/www/sinun_domain/html/*tänne*`
 
-`kayttajanimi/tehtavaLista`
+Siirrä /tehtavaLista ubuntu serverille sijaintiin:
+
+`ubuntu_kayttajanimi/tehtavaLista`
