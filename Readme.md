@@ -4,6 +4,14 @@
 
 Avaa sijainti /tehtavaLista
 
+Lisää env. tiedosto sijaintiin /tehtavaLista/_tänne_:
+
+```
+SALAUS= *esimerkiksiTamaTeksti*
+DBURL = *mongo_db_url*
+PORT = *backendin_kayttama_portti*
+```
+
 Kaynnista backend:
 
 `npm start`
@@ -15,7 +23,7 @@ Lisää config.js sijaintiin tehtavalistaFront/src/config
 Kirjoita config.js sisään:
 
 ```
-export const url = "http://localhost:3001"
+export const url = "http://localhost:*backendin_kayttama_portti*"
 ```
 
 avaa sijainti tehtavalistaFront
@@ -90,6 +98,14 @@ Siirrä /tehtavaLista ubuntu serverille sijaintiin:
 
 `ubuntu_kayttajanimi/tehtavaLista`
 
+Lisää env. tiedosto /tehtavaLista juureen:
+
+```
+SALAUS= *esimerkiksiTamaTeksti*
+DBURL = *mongo_db_url*
+PORT = *backendin_kayttama_portti*
+```
+
 Luo sinun_domain:
 
 `cd /etc/nginx/sites-available`
@@ -138,7 +154,7 @@ Käynnistä sovelluksen back end PM2:lla:
 
 Voit vierailla sivulla www.sinun_domain!
 
-## SSL sertificaatin asetus
+## SSL sertifikaatin asetus
 
 `sudo apt install certbot python3-certbot-nginx`
 
