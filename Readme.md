@@ -64,6 +64,8 @@ Muokkaa ngingx config server_names_hash_bucket_size kohta seuraavaksi:
 
 `pm2 startup systemd`
 
+## Front toimintakuntoon
+
 Lisää config.js sijaintiin tehtavalistaFront/src/config
 
 Kirjoita config.js sisään:
@@ -77,6 +79,8 @@ Avaa sijainti /tehtavalistaFront
 suorita build:
 
 `npm build`
+
+## Siirto ja käynnistys serverillä
 
 Siirrä /build sisällä olevat tiedostot ubuntu serverille sijaintiin:
 
