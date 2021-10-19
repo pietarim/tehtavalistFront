@@ -58,9 +58,7 @@ Muokkaa ngingx config server_names_hash_bucket_size kohta seuraavaksi:
 ...
 ```
 
-`npm install pm2 -g`
-
-`pm2 startup systemd`
+## PM2 asennus
 
 `npm install pm2 -g`
 
