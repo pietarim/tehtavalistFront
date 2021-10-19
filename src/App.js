@@ -1,6 +1,6 @@
 /* import './App.css'; */
 import SisaankirjautumisLomake from './components/SisaankirjautumisLomake'
-import tehtavaService from './server/tehtavaService'
+import { poista, setToken } from './server/tehtavaService'
 import TehtavaSivu from './components/tehtava/TehtavaSivu'
 import TehtavaLomake from './components/TehtavaLomake'
 import React, {useState, useEffect } from 'react'
@@ -25,27 +25,23 @@ function App() {
 
   const muokkaaState = (muokattava) => {
     let uusiState = []
-    tehtava.map(n => { if (n._id === muokattava._id) {
+    tehtava.forEach(n => { if (n._id === muokattava._id) {
       uusiState = uusiState.concat(muokattava)
     } else {
       uusiState = uusiState.concat(n)
     } })
     setTehtava(uusiState)
     uusiState = []
+    return null
   }
 
   const tehtavaPoistaminenKasittelija = async id => {
-    tehtavaService.poista(id)
+    poista(id)
     let arr = []
-    tehtava.map(n => { if (n._id !== id) {
+    tehtava.forEach(n => { if (n._id !== id) {
       arr = arr.concat(n)
     } })
     setTehtava(arr)
-  }
-
-  function kirUlos() {
-    localStorage.removeItem('kirjautunutTunnus')
-    setKayttaja(null)
   }
 
   useEffect(() => {
@@ -56,7 +52,7 @@ function App() {
     const kirjautunutTunnus = window.localStorage.getItem('kirjautunutTunnus')
     if (kirjautunutTunnus) {
       const kayttajaTieto = JSON.parse(kirjautunutTunnus)
-      tehtavaService.setToken(kayttajaTieto.token)
+      setToken(kayttajaTieto.token)
       setKayttaja(kayttajaTieto)
     }
   }, [])

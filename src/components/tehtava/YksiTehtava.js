@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { TextField } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import tehtavaService from '../../server/tehtavaService'
+import { muokkaa } from '../../server/tehtavaService'
 import Typography from '@material-ui/core/Typography';
 
 const YksiTehtava = ({tehtava, tehtavaPoistaminenKasittelija, kayttaja, muokkaaState}) => {
     const [nayta, setNayta] = useState(true)
     const [nappi, setNappi] = useState('näytä')
-    const [muokkaa, setMuokkaa] = useState(false)
+    const [muokkaus, setMuokkaa] = useState(false)
     const [muokattuKuvaus, setMuokattuKuvaus] = useState()
 
     const useStyles = makeStyles((theme) => ({
@@ -23,14 +23,14 @@ const YksiTehtava = ({tehtava, tehtavaPoistaminenKasittelija, kayttaja, muokkaaS
           if (tehtava.tekija === kayttaja) {
               return (
                 <div>
-                    {!muokkaa ? 
+                    {!muokkaus ? 
                     <Button 
                       variant="contained" 
-                      onClick={() => setMuokkaa(!muokkaa)}>
+                      onClick={() => setMuokkaa(!muokkaus)}>
                         muokkaa
                     </Button> :
                   <div>
-                      <form onSubmit={Muokkaa}>
+                      <form onSubmit={muokkaaminen}>
                           <TextField fullWidth
                               className={classes.textFiled}
                               id="outlined-multiline-static"
@@ -47,7 +47,7 @@ const YksiTehtava = ({tehtava, tehtavaPoistaminenKasittelija, kayttaja, muokkaaS
                               Muokkaa
                           </Button> 
                       </form>
-                      <Button onClick={() => setMuokkaa(!muokkaa) } variant="contained" style={{ margin: '25px 15px' }}>
+                      <Button onClick={() => setMuokkaa(!muokkaus) } variant="contained" style={{ margin: '25px 15px' }}>
                           Peruuta
                       </Button>
                       <Button variant="contained" color="secondary" onClick={() => tehtavaPoistaminenKasittelija(tehtava._id)}>poista</Button>
@@ -73,7 +73,7 @@ const YksiTehtava = ({tehtava, tehtavaPoistaminenKasittelija, kayttaja, muokkaaS
         setMuokattuKuvaus(event.target.value)
     }
 
-    const Muokkaa = (event) => {
+    const muokkaaminen = (event) => {
         event.preventDefault()
         const muokattava = {
             _id: tehtava._id,
@@ -81,7 +81,7 @@ const YksiTehtava = ({tehtava, tehtavaPoistaminenKasittelija, kayttaja, muokkaaS
             kommentti: muokattuKuvaus,
             tekija: tehtava.tekija
         }
-        tehtavaService.muokkaa(muokattava)
+        muokkaa(muokattava)
         muokkaaState(muokattava)
     }
 

@@ -4,21 +4,21 @@ import {url} from '../config'
 
     let token = null
 
-const setToken = newToken => {
+export const setToken = newToken => {
     token = `bearer ${newToken}`
 }
 
-const muokkaa = async (muokattu) => {
+export const muokkaa = async (muokattu) => {
     const id = muokattu._id
-    const lahetettava = {
+/*     const lahetettava = {
         otsikko: muokattu.otsikko,
         kuvaus: muokattu.kuvaus,
         tekija: muokattu.tekija
-    }
+    } */
     await axios.put(`${url}/api/tehtavat/${id}`, muokattu)
 }
 
-const lisaa = async content => {
+export const lisaa = async content => {
     const config = {
         headers: { Authorization: token },
     }
@@ -26,7 +26,7 @@ const lisaa = async content => {
     return response.data    
 }
 
-const poista = async (id) => {
+export const poista = async (id) => {
 
     const config = {
         headers: { Authorization: token },
@@ -35,4 +35,4 @@ const poista = async (id) => {
     poistettu.then(console.log('poistettu'))
 }
 
-export default { muokkaa, poista, lisaa, setToken }
+/* export default { muokkaa, poista, lisaa, setToken } */

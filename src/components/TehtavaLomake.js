@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid, TextField } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import tehtavaService from '../server/tehtavaService'
+import { lisaa } from '../server/tehtavaService'
 
 function TehtavaLomake({tehtava, setTehtava}) {
 
@@ -29,10 +29,10 @@ function TehtavaLomake({tehtava, setTehtava}) {
     }
   }));
 
-  const lisaa = async event => {
+  const lisaaminen = async event => {
     console.log('lisaaminen')
     event.preventDefault();
-    const lisatty = await tehtavaService.lisaa({
+    const lisatty = await lisaa({
       otsikko: otsikko,
       kommentti: kommentti
     })
@@ -54,7 +54,7 @@ function TehtavaLomake({tehtava, setTehtava}) {
 
   return (
     <div className={classes.root}>
-      <form onSubmit={lisaa}>
+      <form onSubmit={lisaaminen}>
       <Paper className={classes.paper}>
         <Grid
           container

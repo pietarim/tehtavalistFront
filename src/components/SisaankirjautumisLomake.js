@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Alert from '@material-ui/lab/Alert';
 import kirjaudu from '../server/kayttajaService'
-import setToken from '../server/tehtavaService'
+import {setToken} from '../server/tehtavaService'
 
 function SisaankirjautumisLomake({setKayttaja}) {
   const [kayttajaTunnus, setTunnus] = useState('')
