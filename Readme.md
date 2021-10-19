@@ -1,6 +1,6 @@
 # Ohjeet
 
-## Localhost:
+## Localhost
 
 Avaa sijainti /tehtavaLista
 
@@ -40,7 +40,7 @@ Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistä
 
 `sudo mkdir -p /var/www/sinun_domain/html`
 
-`ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/`
+`ln -s /etc/nginx/sites-available/sinun_domain /etc/nginx/sites-enabled/`
 
 `nano /etc/nginx/nginx.conf`
 
@@ -65,3 +65,23 @@ Muokkaa ngingx config server_names_hash_bucket_size kohta seuraavaksi:
 `npm install pm2 -g`
 
 `pm2 startup systemd`
+
+Lisää config.js sijaintiin tehtavalistaFront/src/config
+
+Kirjoita config.js sisään:
+
+```
+export const url = "https://sinun_domain"
+```
+
+Avaa sijainti /tehtavalistaFront
+
+suorita build
+
+`npm build`
+
+Siirrä /tehtavaLista
+
+ubuntu serverille, esimerkiksi:
+
+`kayttajanimi/tehtavaLista`
