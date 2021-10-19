@@ -135,3 +135,21 @@ Käynnistä sovelluksen back end PM2:lla:
 `cd /ubuntu_kayttajanimi/tehtavaLista`
 
 `sudo pm2 start index.js`
+
+Voit vierailla sivulla www.sinun_domain!
+
+## SSL sertificaatin asetus
+
+`sudo apt install certbot python3-certbot-nginx`
+
+`sudo certbot --nginx -d example.com -d www.example.com`
+
+Valitse mieleisesi vaihtoehto esitetyistä vaihtoehdoista.
+
+Voit ottaa automaattisen uusimisen käyttöön:
+
+`sudo systemctl status certbot.timer`
+
+Suoritetaan vielä testaus:
+
+`sudo certbot renew --dry-run`
