@@ -1,6 +1,6 @@
 # Ohjeet
 
-## Localhost
+## Localhostilla suoritus
 
 Avaa sijainti /tehtavaLista
 
@@ -84,8 +84,35 @@ suorita build:
 
 Siirrä /build sisällä olevat tiedostot ubuntu serverille sijaintiin:
 
-`var/www/sinun_domain/html/*tänne*`
+`var/www/sinun_domain/html`
 
 Siirrä /tehtavaLista ubuntu serverille sijaintiin:
 
 `ubuntu_kayttajanimi/tehtavaLista`
+
+Luo sinun_domain:
+
+`cd /etc/nginx/sites-available`
+`nano sinun-domain`
+
+kirjoita seuraava tiedostoon:
+
+```
+server {
+
+  root /var/www/sinun_domain
+  index index.html index.htm index.nginx-debian.html
+
+  listen       80;
+  server_name  localhost;
+
+  location / {
+    proxy_pass http://localhost:sinun_port;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+  }
+}
+```
