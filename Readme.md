@@ -6,39 +6,41 @@ Avaa sijainti "tehtavaLista"
 
 Kaynnista backend:
 
-### npm start
+`npm start`
 
 Lisää config.js sijaintiin tehtavalistaFront/src/config
 
 Kirjoita config.js sisään:
 
-### export const url = "http://localhost:3001"
+```
+export const url = "http://localhost:3001"
+```
 
 avaa sijainti tehtavalistaFront
 
 käynnistä sovellus:
 
-### npm start
+`npm start`
 
 Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistät sen linkin mukana tulevien ohjeiden mukaan (https://github.com/pietarim/tehtavaLista)
 
 # Virtuaaliserveri Ubuntu Linux (esim Digitalocean)
 
-### `sudo apt update`
+`sudo apt update`
 
-### `sudo apt install nginx`
+`sudo apt install nginx`
 
-### `sudo systemctl start nginx`
+`sudo systemctl start nginx`
 
-### `systemctl status nginx`
+`systemctl status nginx`
 
-### `sudo ufw allow 'Nginx HTTP'`
+`sudo ufw allow 'Nginx HTTP'`
 
-### `sudo mkdir -p /var/www/sinun_domain/html`
+`sudo mkdir -p /var/www/sinun_domain/html`
 
-### `ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/`
+`ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/`
 
-### `nano /etc/nginx/nginx.conf`
+`nano /etc/nginx/nginx.conf`
 
 | /etc/nginx/nginx.conf |
 | --------------------- |
