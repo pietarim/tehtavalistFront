@@ -26,6 +26,8 @@ käynnistä sovellus:
 
 ## Virtuaaliserveri Ubuntu Linux (esim Digitalocean)
 
+### Nginx asennus ja palomuurin konfigurointi
+
 `sudo apt update`
 
 `sudo apt install nginx`
@@ -74,7 +76,7 @@ export const url = "https://sinun_domain"
 
 Avaa sijainti /tehtavalistaFront
 
-suorita build
+suorita build:
 
 `npm build`
 
