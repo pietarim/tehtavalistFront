@@ -24,9 +24,9 @@ käynnistä sovellus:
 
 `npm start`
 
-## Virtuaaliserveri Ubuntu Linux (esim Digitalocean)
+# Virtuaaliserveri Ubuntu Linux (esim Digitalocean)
 
-### Nginx asennus ja palomuurin konfigurointi
+## Nginx asennus ja palomuurin konfigurointi
 
 `sudo apt update`
 
