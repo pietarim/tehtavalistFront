@@ -93,7 +93,8 @@ Siirrä /tehtavaLista ubuntu serverille sijaintiin:
 Luo sinun_domain:
 
 `cd /etc/nginx/sites-available`
-`nano sinun-domain`
+
+`sudo nano sinun-domain`
 
 kirjoita seuraava tiedostoon:
 
@@ -116,3 +117,21 @@ server {
   }
 }
 ```
+
+lisää sites-available tiedosto sites-enabled listaan:
+
+`sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/`
+
+tarkista että kaikki toimii:
+
+`sudo nano /etc/nginx/nginx.conf`
+
+uudelleenkäynnistä Nginx:
+
+`sudo systemctl restart nginx`
+
+Käynnistä sovelluksen back end PM2:lla:
+
+`cd /ubuntu_kayttajanimi/tehtavaLista`
+
+`sudo pm2 start index.js`
