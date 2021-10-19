@@ -2,11 +2,13 @@
 
 ## Localhost:
 
-Avaa sijainti "tehtavaLista"
+Avaa sijainti /tehtavaLista
 
 Kaynnista backend:
 
 `npm start`
+
+Avaa sijainti /tehtavalistaFront
 
 Lisää config.js sijaintiin tehtavalistaFront/src/config
 
