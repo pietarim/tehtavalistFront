@@ -1,20 +1,28 @@
 ## Ohjeet
 
-# Localhost:
+### Localhost:
 
-lisää config.js sijaintiin /src
+Avaa sijainti "tehtavaLista"
 
-lisää config.js sisään:
+Kaynnista backend:
 
-### export const url = "https://sinun_domain.com"
+### npm start
 
-käynnistä sovellus
+Lisää config.js sijaintiin tehtavalistaFront/src/config
+
+Kirjoita config.js sisään:
+
+### export const url = "http://localhost:3001"
+
+avaa sijainti tehtavalistaFront
+
+käynnistä sovellus:
 
 ### npm start
 
 Sovelluksen backend löytyy [täältä] solluksen backend toimii kun käynnistät sen linkin mukana tulevien ohjeiden mukaan (https://github.com/pietarim/tehtavaLista)
 
-# Virtuaaliserveri Ubuntu Linux Digitalocean
+# Virtuaaliserveri Ubuntu Linux (esim Digitalocean)
 
 ### `sudo apt update`
 
